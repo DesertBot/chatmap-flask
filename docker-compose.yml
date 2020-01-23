@@ -3,7 +3,10 @@ version: '3'
 services:
   frontend:
     container_name: chat-map-frontend
-    image: nginx
+    image: starlitghost/chatmap-frontend:latest
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
     depends_on:
       - backend
     networks:
